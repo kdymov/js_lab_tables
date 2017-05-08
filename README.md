@@ -1,1 +1,3 @@
-# js_lab_tables
+# Javascript Table operations
+
+Filtration, sorting, pagination
