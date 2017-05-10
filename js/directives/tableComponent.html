@@ -1,0 +1,18 @@
+Filter: 
+<select>
+    <option ng-repeat="col in tbl.keys">{{ col }}</option>
+</select>
+<input type="text" />
+<button>Apply</button>
+<table>
+    <thead>
+        <tr>
+            <td ng-repeat="col in tbl.keys" ng-click="sort(tbl.index, col)">{{ col }}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in tbl.table">
+            <td ng-repeat="col in tbl.keys">{{ row[col] }}</td>
+        </tr>
+    </tbody>
+</table>
