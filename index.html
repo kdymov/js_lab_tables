@@ -8,19 +8,13 @@
     <body ng-app="app">
         <div class="main" ng-controller="MainController">
             <h1>{{ title }}</h1>
-            <button ng-click="load_small()">Load</button>
-            <table ng-repeat="tbl in tables">
-                <thead>
-                    <tr>
-                        <td ng-repeat="col in tbl.keys">{{ col }}</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="row in tbl.table">
-                        <td ng-repeat="col in tbl.keys">{{ row[col] }}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <button ng-click="load_small()">Small</button>
+            <button ng-click="load_big()">Big</button>
+            <button ng-click="load_custom()">Custom</button>
+            <input type="file" />
+            <div class="component" ng-repeat="table in tables">
+                <table-component tbl="table" sorting="sort"></table-component>
+            </div>
         </div>
         
         <!-- Modules -->
@@ -28,6 +22,9 @@
 
         <!-- Controllers -->
         <script src="js/controllers/MainController.js"></script>
+        
+        <!-- Directives -->
+        <script src="js/directives/tableComponent.js"></script>
         
         <!-- Services -->
 	<script src="js/services/LoaderService.js"></script>
