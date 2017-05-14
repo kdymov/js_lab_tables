@@ -3,7 +3,10 @@ app.directive('tableComponent', function() {
         restrict: 'E',
         scope: {
             tbl: '=',
-            sorting: '='
+            sorting: '=',
+            filtering: '=',
+            resetfilter: '=',
+            selecting: '='
         },
         templateUrl: 'js/directives/tableComponent.html'
     };
