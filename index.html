@@ -13,7 +13,13 @@
             <button ng-click="load_custom()">Custom</button>
             <input type="file" />
             <div class="component" ng-repeat="table in tables">
-                <table-component tbl="table" sorting="sort"></table-component>
+                <table-component 
+                    tbl="table"
+                    sorting="sort"
+                    filtering="filter"
+                    resetfilter="reset"
+                    selecting="select">
+                </table-component>
             </div>
         </div>
         
@@ -27,6 +33,6 @@
         <script src="js/directives/tableComponent.js"></script>
         
         <!-- Services -->
-	<script src="js/services/LoaderService.js"></script>
+		<script src="js/services/LoaderService.js"></script>
     </body>
 </html>
