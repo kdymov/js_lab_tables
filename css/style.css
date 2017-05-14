@@ -1,13 +1,17 @@
-td {
+.component {
+    margin-top: 20px;
+}
+
+.table-wrapper td {
     border: 1px solid black;
     padding: 2px 5px;
 }
 
-thead td {
+.table-wrapper thead td {
     background-color: #eeeeee;
     text-align: center;
 }
 
-tbody td {
+.table-wrapper tbody td {
     background-color: #f9f9f9;
 }
