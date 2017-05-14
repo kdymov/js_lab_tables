@@ -1,18 +1,27 @@
-Filter: 
-<select>
-    <option ng-repeat="col in tbl.keys">{{ col }}</option>
-</select>
-<input type="text" />
-<button>Apply</button>
-<table>
-    <thead>
-        <tr>
-            <td ng-repeat="col in tbl.keys" ng-click="sorting(tbl.index, col)">{{ col }}</td>
+<div class="table-wrapper">
+    Filter: 
+    <select ng-model="tbl.filtercol" ng-options="col for col in tbl.keys"></select>
+    <input type="text" ng-model="tbl.filterstring" />
+    <button ng-click="filtering(tbl.index)">Apply</button>
+    <button ng-click="resetfilter(tbl.index)">Reset</button>
+    <table>
+        <thead>
+            <tr>
+                <td ng-repeat="col in tbl.keys" ng-click="sorting(tbl.index, col)">{{ col }}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in tbl.table">
+                <td ng-repeat="col in tbl.keys" ng-click="selecting(tbl.index, row)">{{ row[col] }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="values-wrapper">
+    <table>
+        <tr ng-repeat="col in tbl.keys">
+            <td>{{ col }}</td>
+            <td><input type="text" ng-model="tbl.selected[col]" readonly /></td>
         </tr>
-    </thead>
-    <tbody>
-        <tr ng-repeat="row in tbl.table">
-            <td ng-repeat="col in tbl.keys">{{ row[col] }}</td>
-        </tr>
-    </tbody>
-</table>
+    </table>
+</div>
