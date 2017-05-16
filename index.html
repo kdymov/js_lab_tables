@@ -11,28 +11,33 @@
             <button ng-click="load_small()">Small</button>
             <button ng-click="load_big()">Big</button>
             <button ng-click="load_custom()">Custom</button>
-            <input type="file" />
+            <input type="file" fileread="filedata"/>
             <div class="component" ng-repeat="table in tables">
                 <table-component 
                     tbl="table"
                     sorting="sort"
                     filtering="filter"
                     resetfilter="reset"
-                    selecting="select">
+                    selecting="select"
+                    changepage="changepage">
                 </table-component>
             </div>
         </div>
         
         <!-- Modules -->
         <script src="js/app.js"></script>
+        
+        <!-- Filters -->
+        <script src="js/filters/rangeFilter.js"></script>
 
         <!-- Controllers -->
         <script src="js/controllers/MainController.js"></script>
         
         <!-- Directives -->
         <script src="js/directives/tableComponent.js"></script>
+        <script src="js/directives/fileread.js"></script>
         
         <!-- Services -->
-		<script src="js/services/LoaderService.js"></script>
+        <script src="js/services/LoaderService.js"></script>
     </body>
 </html>
