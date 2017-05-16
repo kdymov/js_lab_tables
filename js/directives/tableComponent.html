@@ -11,11 +11,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="row in tbl.table">
+            <tr ng-repeat="row in tbl.view">
                 <td ng-repeat="col in tbl.keys" ng-click="selecting(tbl.index, row)">{{ row[col] }}</td>
             </tr>
         </tbody>
     </table>
+</div>
+<div class="pagination-wrapper">
+    <div class="page-wrapper" ng-repeat="page in [] | range:tbl.pages">
+        <button ng-click="changepage($index, tbl.index)">{{ $index + 1 }}</button>
+    </div>
 </div>
 <div class="values-wrapper">
     <table>
