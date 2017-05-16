@@ -6,7 +6,8 @@ app.directive('tableComponent', function() {
             sorting: '=',
             filtering: '=',
             resetfilter: '=',
-            selecting: '='
+            selecting: '=',
+            changepage: '='
         },
         templateUrl: 'js/directives/tableComponent.html'
     };
